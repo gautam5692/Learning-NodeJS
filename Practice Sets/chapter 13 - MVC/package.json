@@ -1,0 +1,25 @@
+{
+  "name": "ch-9-practice-set",
+  "version": "1.0.0",
+  "description": "This is just for practice",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon app.js",
+    "dev:css": "npx @tailwindcss/cli -i ./public/input.css -o ./public/output.css --watch"
+  },
+  "author": "complete-coding",
+  "license": "ISC",
+  "devDependencies": {
+    "@tailwindcss/cli": "^4.1.5",
+    "autoprefixer": "^10.4.21",
+    "nodemon": "^3.1.10",
+    "postcss": "^8.5.3",
+    "tailwindcss": "^4.1.5"
+  },
+  "dependencies": {
+    "body-parser": "^2.2.0",
+    "ejs": "^3.1.10",
+    "express": "^5.1.0"
+  }
+}

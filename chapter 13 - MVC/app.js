@@ -1,13 +1,10 @@
 const path = require("path");
 const express = require("express"); // External Module
-
-// local modules
-const userRouter = require("./routes/userRouter");
-const { hostRouter } = require("./routes/hostRouter");
-const rootDir = require("./utils/path_uitility");
-const { errController } = require("./controllers/error");
-
+const userRouter = require("./routes/userRouter"); // Local Module
+const { hostRouter } = require("./routes/hostRouter"); // Local Module
+const rootDir = require("./utils/path_uitility"); // Local Module
 const app = express();
+const { pageNotFound } = require("./controllers/errors");
 
 app.set("view engine", "ejs");
 app.set("views", "views");
@@ -18,7 +15,7 @@ app.use(express.urlencoded());
 app.use(userRouter);
 app.use("/host", hostRouter);
 
-app.use(errController);
+app.use(pageNotFound);
 
 const PORT = 2200;
 app.listen(PORT, () => {
